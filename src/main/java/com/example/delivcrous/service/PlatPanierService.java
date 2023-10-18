@@ -6,7 +6,7 @@ import com.example.delivcrous.model.PlatPanier;
 import com.example.delivcrous.repository.PanierRepository;
 import com.example.delivcrous.repository.PlatPanierRepository;
 import com.example.delivcrous.repository.PlatRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,13 +14,13 @@ import java.util.List;
 @Service
 public class PlatPanierService {
 
-    @Autowired
+    @Inject
     private PlatPanierRepository platPanierRepository;
 
-    @Autowired
+    @Inject
     private PlatRepository platRepository;
 
-    @Autowired
+    @Inject
     private PanierRepository panierRepository;
 
     public List<PlatPanier> getAllPlatPaniers() {

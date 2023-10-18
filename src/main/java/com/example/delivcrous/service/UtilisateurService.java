@@ -2,22 +2,28 @@ package com.example.delivcrous.service;
 
 import com.example.delivcrous.model.Utilisateur;
 import com.example.delivcrous.repository.UtilisateurRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.List;
 
 @Service
 public class UtilisateurService {
 
-    @Autowired
+    @Inject
     private UtilisateurRepository utilisateurRepository;
 
     public List<Utilisateur> getAllUtilisateurs() {
         return utilisateurRepository.findAll();
     }
 
-    public void createUtilisateur(Utilisateur utilisateur) {
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public void createUtilisateur(@Valid Utilisateur utilisateur) {
+        System.out.println("mot de passe " + utilisateur.getPassword());
+        utilisateur.setPassword(passwordEncoder.encode(utilisateur.getPassword()));
         utilisateurRepository.save(utilisateur);
     }
 

@@ -2,16 +2,16 @@ package com.example.delivcrous.controller;
 
 import com.example.delivcrous.model.Panier;
 import com.example.delivcrous.service.PanierService;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 @Path("/paniers")
 public class PanierController {
 
-    @Autowired
+    @Inject
     private PanierService panierService;
 
     @GET

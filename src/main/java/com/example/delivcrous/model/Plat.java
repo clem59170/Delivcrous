@@ -2,6 +2,8 @@ package com.example.delivcrous.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Plat {
 
@@ -9,28 +11,28 @@ public class Plat {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "plat_sequence")
     @SequenceGenerator(name = "plat_sequence", sequenceName = "plat_sequence", allocationSize = 1)
 
-    private Long plat_id;
+    private Long id;
 
-    private String nom;
+    private String title;
     private String description;
     private Long prix;
-    private String image_url;
-    private String categorie;
-
-    public Long getPlat_id() {
-        return plat_id;
+    private String image;
+    private String category;
+    private String allergenes;
+    public Long getid() {
+        return id;
     }
 
-    public void setPlat_id(Long plat_id) {
-        this.plat_id = plat_id;
+    public void setid(Long id) {
+        this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String gettitle() {
+        return title;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void settitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
@@ -49,28 +51,37 @@ public class Plat {
         this.prix = prix;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getimage() {
+        return image;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setimage(String image) {
+        this.image = image;
     }
 
-    public String getCategorie() {
-        return categorie;
+    public String getcategory() {
+        return category;
     }
 
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
+    public void setcategory(String category) {
+        this.category = category;
     }
 
-    public Plat(String nom, String description, Long prix, String image_url, String categorie) {
-        this.nom = nom;
+    public String getAllergenes(){
+        return allergenes;
+    }
+
+    public void setAllergenes(String allergenes){
+        this.allergenes = allergenes;
+    }
+
+    public Plat(String title, String description, Long prix, String image, String category, String allergenes) {
+        this.title = title;
         this.description = description;
         this.prix = prix;
-        this.image_url = image_url;
-        this.categorie = categorie;
+        this.image = image;
+        this.category = category;
+        this.allergenes = allergenes;
     }
 
     public Plat(){}

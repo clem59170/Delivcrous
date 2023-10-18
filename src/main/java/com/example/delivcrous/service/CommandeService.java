@@ -4,7 +4,7 @@ import com.example.delivcrous.model.Commande;
 import com.example.delivcrous.model.Utilisateur;
 import com.example.delivcrous.repository.CommandeRepository;
 import com.example.delivcrous.repository.UtilisateurRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +12,10 @@ import java.util.List;
 @Service
 public class CommandeService {
 
-    @Autowired
+    @Inject
     private CommandeRepository commandeRepository;
 
-    @Autowired
+    @Inject
     private UtilisateurRepository utilisateurRepository;
 
     public List<Commande> getAllCommandes() {

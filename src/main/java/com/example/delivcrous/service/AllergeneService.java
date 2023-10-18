@@ -2,7 +2,7 @@ package com.example.delivcrous.service;
 
 import com.example.delivcrous.model.Allergene;
 import com.example.delivcrous.repository.AllergeneRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class AllergeneService {
 
-    @Autowired
+    @Inject
     private AllergeneRepository allergeneRepository;
 
     public List<Allergene> getAllAllergenes() {

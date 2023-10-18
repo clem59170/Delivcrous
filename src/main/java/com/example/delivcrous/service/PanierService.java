@@ -4,7 +4,7 @@ import com.example.delivcrous.repository.UtilisateurRepository;
 import com.example.delivcrous.model.Panier;
 import com.example.delivcrous.model.Utilisateur;
 import com.example.delivcrous.repository.PanierRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +12,10 @@ import java.util.List;
 @Service
 public class PanierService {
 
-    @Autowired
+    @Inject
     private PanierRepository panierRepository;
 
-    @Autowired
+    @Inject
     private UtilisateurRepository utilisateurRepository;
 
     public List<Panier> getAllPaniers() {

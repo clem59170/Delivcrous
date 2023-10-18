@@ -2,16 +2,15 @@ package com.example.delivcrous.controller;
 
 import com.example.delivcrous.model.PlatPanier;
 import com.example.delivcrous.service.PlatPanierService;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 
 @Path("/plat_paniers")
 public class PlatPanierController {
 
-    @Autowired
+    @Inject
     private PlatPanierService platPanierService;
 
     @GET

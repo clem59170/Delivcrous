@@ -4,7 +4,7 @@ import com.example.delivcrous.model.Commande;
 import com.example.delivcrous.model.Plat;
 import com.example.delivcrous.model.PlatCommande;
 import com.example.delivcrous.repository.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,13 +12,13 @@ import java.util.List;
 @Service
 public class PlatCommandeService {
 
-    @Autowired
+    @Inject
     private PlatCommandeRepository platCommandeRepository;
 
-    @Autowired
+    @Inject
     private CommandeRepository commandeRepository;
 
-    @Autowired
+    @Inject
     private PlatRepository platRepository;
 
     public List<PlatCommande> getAllPlatCommandes() {

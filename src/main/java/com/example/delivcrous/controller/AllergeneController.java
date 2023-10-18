@@ -2,16 +2,16 @@ package com.example.delivcrous.controller;
 
 import com.example.delivcrous.model.Allergene;
 import com.example.delivcrous.service.AllergeneService;
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 @Path("/allergenes/")
 public class AllergeneController {
 
-    @Autowired
+    @Inject
     private AllergeneService allergeneService;
 
     @GET
