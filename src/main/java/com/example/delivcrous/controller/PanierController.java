@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/paniers")
+@Path("api/paniers")
 public class PanierController {
 
     @Inject
