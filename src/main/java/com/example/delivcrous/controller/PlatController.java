@@ -7,7 +7,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/plats")
+@Path("api/plats")
 public class PlatController {
 
     @Inject

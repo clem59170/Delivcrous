@@ -7,7 +7,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/plat_paniers")
+@Path("api/plat_paniers")
 public class PlatPanierController {
 
     @Inject

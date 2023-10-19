@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/allergenes/")
+@Path("api/allergenes/")
 public class AllergeneController {
 
     @Inject

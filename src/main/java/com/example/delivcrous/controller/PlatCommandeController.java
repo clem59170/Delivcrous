@@ -8,7 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/plat_commandes")
+@Path("api/plat_commandes")
 public class PlatCommandeController {
 
     @Inject
