@@ -2,6 +2,7 @@ package com.example.delivcrous.security.jwt;
 
 import java.io.IOException;
 
+import com.example.delivcrous.exceptions.UserIdMismatchException;
 import com.example.delivcrous.security.userDetails.UserDetailsServiceImpl;
 import jakarta.inject.Inject;
 import jakarta.servlet.FilterChain;
@@ -48,11 +49,12 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                     Long userIdFromRequest = Long.valueOf(userIdParam);
                     Long userIdFromToken = jwtUtils.getUserIdFromJwtToken(jwt);
                     if (!userIdFromToken.equals(userIdFromRequest)) {
-                        response.sendError(HttpServletResponse.SC_FORBIDDEN, "Accès refusé");
-                        return;  // Evite de continuer l'éxécution pour R
+                        throw new UserIdMismatchException("Access denied");
                     }
                 }
             }
+        } catch (UserIdMismatchException e) {
+            throw e;
         } catch (Exception e) {
             logger.error("Cannot set user authentication: {}", e);
         }
