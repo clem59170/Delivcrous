@@ -54,5 +54,4 @@ public class UserInfoResponse {
     public Double getSolde_crous() { return solde_crous; }
 
     public void setSolde_crous(Double solde_crous) {this.solde_crous = solde_crous; }
-
 }
