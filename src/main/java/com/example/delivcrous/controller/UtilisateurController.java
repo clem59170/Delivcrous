@@ -43,7 +43,9 @@ public class UtilisateurController {
     @Path("/register")
     @Consumes(MediaType.APPLICATION_JSON)
     public void createUtilisateur(Utilisateur utilisateur) {
+        System.out.println("Password: " + utilisateur.getPassword());
         utilisateurService.createUtilisateur(utilisateur);
+
     }
 
     @POST
