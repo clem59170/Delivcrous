@@ -30,4 +30,8 @@ public class CommandeService {
         commande.setUtilisateur(utilisateur);
         commandeRepository.save(commande);
     }
+
+    public List<Commande> findByUserId(Long user_id) {
+        return commandeRepository.findByUserId(user_id);
+    }
 }
