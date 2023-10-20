@@ -95,13 +95,15 @@ public class Utilisateur {
     }
     
     public String getAdresse() {return this.adresse; }
-    public Utilisateur(String username, String email, String password, String nom, String prenom, Double solde_crous) {
+    public Utilisateur(String username, String email, String password, String nom, String prenom, Double solde_crous, String tel, String adresse) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.nom = nom;
         this.prenom = prenom;
         this.solde_crous = solde_crous;
+        this.tel = tel;
+        this.adresse = adresse;
     }
 
 
