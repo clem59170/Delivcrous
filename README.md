@@ -43,3 +43,7 @@ L'application fournit plusieurs endpoints API pour interagir avec le système. V
 ## Diagramme de séquence 
 
 ![Diagramme](https://showme.redstarplugin.com/d/d:lcJ70blj)
+
+### important
+
+Le projet a été fait sous intelliJ, il se peut qu'il y ait des problèmes d'importation sur un autre IDE
