@@ -22,12 +22,21 @@ public class UserDetailsImpl implements UserDetails {
     @JsonIgnore
     private String password;
 
+    private String tel;
 
-    public UserDetailsImpl(Long id, String username, String email, String password) {
+    private String adresse;
+
+    private Double solde_crous;
+
+
+    public UserDetailsImpl(Long id, String username, String email, String password, Double solde_crous, String tel, String adresse) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.tel = tel;
+        this.adresse = adresse;
+        this.solde_crous = solde_crous;
     }
 
     public static UserDetailsImpl build(Utilisateur user) {
@@ -36,7 +45,10 @@ public class UserDetailsImpl implements UserDetails {
                 user.getUser_id(),
                 user.getUsername(),
                 user.getEmail(),
-                user.getPassword());
+                user.getPassword(),
+                user.getSolde_crous(),
+                user.getAdresse(),
+                user.getTel());
     }
 
     public Long getId() {
@@ -46,6 +58,11 @@ public class UserDetailsImpl implements UserDetails {
     public String getEmail() {
         return email;
     }
+
+    public String getTel() { return tel; }
+    public String getAdresse() {return adresse; }
+
+    public Double getSolde_crous() { return solde_crous; }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
