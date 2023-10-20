@@ -16,6 +16,9 @@ public class RegisterRequest {
     @Size(min = 6, max = 40)
     private String password;
 
+    private String tel;
+    private String adresse;
+
     public String getUsername() {
         return username;
     }
@@ -39,4 +42,12 @@ public class RegisterRequest {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void setTel(String tel) { this.tel = tel; }
+
+    public String getTel() { return tel; }
+
+    public void setAdresse(String adresse) { this.adresse = adresse; }
+
+    public String getAdresse() { return adresse; }
 }
