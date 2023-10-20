@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.delivcrous.exceptions.UserIdMismatchException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -29,13 +31,25 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
         logger.error("Unauthorized error: {}", authException.getMessage());
 
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 
         final Map<String, Object> body = new HashMap<>();
-        body.put("status", HttpServletResponse.SC_UNAUTHORIZED);
-        body.put("error", "Unauthorized");
-        body.put("message", authException.getMessage());
         body.put("path", request.getServletPath());
+        if (authException instanceof UserIdMismatchException) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);  // 403 Forbidden
+            body.put("status", HttpServletResponse.SC_FORBIDDEN);
+            body.put("error", "Forbidden");
+            body.put("message", authException.getMessage());
+        } else if (authException instanceof BadCredentialsException) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);  // 401 Unauthorized
+            body.put("status", HttpServletResponse.SC_UNAUTHORIZED);
+            body.put("error", "Bad Credentials");
+            body.put("message", authException.getMessage());
+        } else {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);  // 403 Forbidden
+            body.put("status", HttpServletResponse.SC_FORBIDDEN);
+            body.put("error", "Forbidden");
+            body.put("message", authException.getMessage());
+        }
 
         final ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getOutputStream(), body);

@@ -3,6 +3,7 @@ package com.example.delivcrous.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Commande {
@@ -16,12 +17,28 @@ public class Commande {
     @JoinColumn(name = "user_id", nullable = false)
     private Utilisateur utilisateur;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "commande_plat",
+            joinColumns = @JoinColumn(name = "commande_id"),
+            inverseJoinColumns = @JoinColumn(name = "plat_id")
+    )
+    private List<Plat> plats;
+
+
     private String adresse_livraison;
     private String status;
     private Date date_commande;
 
     // Getters et Setters
 
+    public List<Plat> getPlats() {
+        return plats;
+    }
+
+    public void setPlats(List<Plat> plats) {
+        this.plats = plats;
+    }
 
     public Long getCommande_id() {
         return commande_id;
