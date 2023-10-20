@@ -1,5 +1,6 @@
 package com.example.delivcrous.controller;
 
+import com.example.delivcrous.model.Commande;
 import com.example.delivcrous.model.Panier;
 import com.example.delivcrous.service.PanierService;
 import jakarta.inject.Inject;
@@ -20,7 +21,13 @@ public class PanierController {
         return panierService.getAllPaniers();
     }
 
+    @GET
+    @Path("/getpanier")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Panier getPanierByUser_id(@QueryParam("user_id") Long user_id) { return panierService.findByUserId(user_id); }
+
     @POST
+    @Path("/createpanier")
     @Consumes(MediaType.APPLICATION_JSON)
     public void createPanier(Panier panier, @QueryParam("user_id") Long user_id) {
         panierService.createPanier(panier, user_id);

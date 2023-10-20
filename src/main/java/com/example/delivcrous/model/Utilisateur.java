@@ -29,6 +29,9 @@ public class Utilisateur {
     private String prenom;
     private Double solde_crous;
 
+    @OneToOne(mappedBy = "utilisateur", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Panier panier;
+
     public Long getUser_id() {
         return user_id;
     }

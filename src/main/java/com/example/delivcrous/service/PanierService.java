@@ -1,5 +1,6 @@
 package com.example.delivcrous.service;
 
+import com.example.delivcrous.model.Commande;
 import com.example.delivcrous.repository.UtilisateurRepository;
 import com.example.delivcrous.model.Panier;
 import com.example.delivcrous.model.Utilisateur;
@@ -21,14 +22,17 @@ public class PanierService {
     public List<Panier> getAllPaniers() {
         return panierRepository.findAll();
     }
-
+    public Panier findByUserId(Long user_id) {
+        return panierRepository.findByUserId(user_id);
+    }
     public void createPanier(Panier panier, Long user_id) {
-        System.out.println("user_id: " + user_id); // Logging user ID
-                Utilisateur utilisateur = utilisateurRepository.findById(user_id).orElseThrow(
-                ()  -> new RuntimeException("Utilisateur non trouvé")
-        );
-        panier.setUtilisateur(utilisateur);
+        // Trouver l'utilisateur associé
+        Utilisateur utilisateur = utilisateurRepository.findById(user_id)
+                .orElseThrow(() -> new RuntimeException("Utilisateur non trouvé"));
+
+        // Sauvegarder le panier
         panierRepository.save(panier);
     }
+
 
 }

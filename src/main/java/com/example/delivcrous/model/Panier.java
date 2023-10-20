@@ -2,6 +2,8 @@ package com.example.delivcrous.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Panier {
 
@@ -10,12 +12,24 @@ public class Panier {
     @SequenceGenerator(name = "panier_sequence", sequenceName = "panier_sequence", allocationSize = 1)
     private Long panier_id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Utilisateur utilisateur;
 
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "panier_id")
+    private List<Plat> plats;
+
+
     // Getters et Setters
 
+    public List<Plat> getPlats() {
+        return plats;
+    }
+
+    public void setPlats(List<Plat> plats) {
+        this.plats = plats;
+    }
     public Long getPanier_id() {
         return panier_id;
     }

@@ -60,14 +60,14 @@ public class DelivcrousApplication {
             Commande commande2 = commandeRepository.save(new Commande(user2, "456 Rue DEF", "En préparation", new SimpleDateFormat("yyy-MM-dd").parse("2023-08-30")));
 
             // Insertion de données dans la table Panier
-            Panier panier1 = panierRepository.save(new Panier(user1));
+/*            Panier panier1 = panierRepository.save(new Panier(user1));
             Panier panier2 = panierRepository.save(new Panier(user2));
             Panier panier3 = panierRepository.save(new Panier(user3));
 
             // Insertion de données dans la table Plat_Panier
             platPanierRepository.save(new PlatPanier(plat1, panier1, 2));
             platPanierRepository.save(new PlatPanier(plat2, panier2, 1));
-            platPanierRepository.save(new PlatPanier(plat3, panier3, 2));
+            platPanierRepository.save(new PlatPanier(plat3, panier3, 2));*/
 
             // Insertion de données dans la table Plat_Commande
             platCommandeRepository.save(new PlatCommande(plat1, commande1, 1));
