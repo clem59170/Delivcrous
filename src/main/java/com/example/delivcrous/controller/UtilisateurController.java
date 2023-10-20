@@ -71,5 +71,7 @@ public class UtilisateurController {
                         userDetails.getAdresse(),
                         userDetails.getSolde_crous()));
 
+
+
     }
 }
