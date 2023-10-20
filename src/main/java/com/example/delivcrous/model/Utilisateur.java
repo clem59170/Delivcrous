@@ -1,5 +1,6 @@
 package com.example.delivcrous.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
@@ -24,6 +25,7 @@ public class Utilisateur {
     @Size(min = 8, message = "Le mot de passe doit avoir au moins 8 caractères")
     //@Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,}$",
     //        message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial parmi @$!%*?&#")
+
     private String password;
     private String nom;
     private String prenom;
@@ -89,6 +91,7 @@ public class Utilisateur {
     public String getTel() { return tel; }
 
     public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
     
     public String getAdresse() {return this.adresse; }
@@ -100,6 +103,12 @@ public class Utilisateur {
         this.prenom = prenom;
         this.solde_crous = solde_crous;
     }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     public Utilisateur(){}
 }
