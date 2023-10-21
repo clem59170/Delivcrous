@@ -13,18 +13,10 @@ public class Utilisateur {
     @Column(name = "user_id")
 
     private Long user_id;
-    @NotEmpty(message = "Le nom d'utilisateur ne peut pas être vide")
-    @Size(min = 3, max = 20, message = "Le nom d'utilisateur doit avoir entre 3 et 20 caractères")
-    @Pattern(regexp = "[a-zA-Z0-9]*", message = "Seuls les chiffres et les lettres sont autorisés pour le nom d'utilisateur")
+
     private String username;
 
-    @Email(message = "Doit être une adresse e-mail valide")
     private String email;
-
-    @NotEmpty(message = "Le mot de passe ne peut pas être vide")
-    @Size(min = 8, message = "Le mot de passe doit avoir au moins 8 caractères")
-    //@Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&#])[A-Za-z\\d@$!%*?&#]{8,}$",
-    //        message = "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial parmi @$!%*?&#")
 
     private String password;
     private String nom;
@@ -52,7 +44,6 @@ public class Utilisateur {
         this.username = username;
     }
     public String getEmail() { return email; }
-    public void setEmail() { this.email = email; }
 
     public String getPassword() {
         return password;
@@ -76,6 +67,14 @@ public class Utilisateur {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public Panier getPanier() {
+        return panier;
+    }
+
+    public void setPanier(Panier panier) {
+        this.panier = panier;
     }
 
     public Double getSolde_crous() {

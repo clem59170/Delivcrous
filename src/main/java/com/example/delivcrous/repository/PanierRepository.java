@@ -1,13 +1,10 @@
 package com.example.delivcrous.repository;
 
-import com.example.delivcrous.model.Commande;
 import com.example.delivcrous.model.Panier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public interface PanierRepository extends JpaRepository<Panier, Long> {

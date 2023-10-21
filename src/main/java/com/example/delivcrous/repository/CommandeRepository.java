@@ -1,7 +1,6 @@
 package com.example.delivcrous.repository;
 
 import com.example.delivcrous.model.Commande;
-import com.example.delivcrous.model.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

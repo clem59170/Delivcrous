@@ -1,7 +1,6 @@
 package com.example.delivcrous.controller;
 
 import com.example.delivcrous.model.Commande;
-import com.example.delivcrous.repository.CommandeRepository;
 import com.example.delivcrous.service.CommandeService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;

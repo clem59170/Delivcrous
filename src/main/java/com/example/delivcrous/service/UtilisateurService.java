@@ -22,7 +22,6 @@ public class UtilisateurService {
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public void createUtilisateur(@Valid Utilisateur utilisateur) {
-        System.out.println("mot de passe " + utilisateur.getPassword());
         utilisateur.setPassword(passwordEncoder.encode(utilisateur.getPassword()));
         utilisateurRepository.save(utilisateur);
     }

@@ -23,7 +23,6 @@ public class CommandeService {
     }
 
     public void createCommande(Commande commande, Long user_id) {
-        System.out.println("user_id: " + user_id); // Logging user ID
         Utilisateur utilisateur = utilisateurRepository.findById(user_id).orElseThrow(
                 ()  -> new RuntimeException("Utilisateur non trouvé")
         );
