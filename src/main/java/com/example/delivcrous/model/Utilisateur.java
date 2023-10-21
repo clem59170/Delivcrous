@@ -1,6 +1,7 @@
 package com.example.delivcrous.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
@@ -25,6 +26,7 @@ public class Utilisateur {
     private String tel;
 
     @OneToOne(mappedBy = "utilisateur", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
     private Panier panier;
     private String adresse;
 

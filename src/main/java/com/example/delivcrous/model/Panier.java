@@ -1,5 +1,6 @@
 package com.example.delivcrous.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -13,7 +14,8 @@ public class Panier {
     private Long panier_id;
 
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JsonBackReference
     private Utilisateur utilisateur;
 
     @OneToMany(fetch = FetchType.EAGER)
