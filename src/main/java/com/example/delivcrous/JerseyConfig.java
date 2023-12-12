@@ -6,6 +6,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
-        packages("com.example.delivcrous.controller", "com.example.delivcrous.exceptions", "com.example.delivcrous.model", "com.example.delivcrous.payload", "com.example.delivcrous.repository", "com.example.delivcrous.security", "com.example.delivcrous.service");
+        // Controllers
+        register(com.example.delivcrous.controller.AllergeneController.class);
+        register(com.example.delivcrous.controller.CommandeController.class);
+        register(com.example.delivcrous.controller.PanierController.class);
+        register(com.example.delivcrous.controller.PlatCommandeController.class);
+        register(com.example.delivcrous.controller.PlatController.class);
+        register(com.example.delivcrous.controller.PlatPanierController.class);
+        register(com.example.delivcrous.controller.UtilisateurController.class);
+
     }
 }
