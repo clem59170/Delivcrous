@@ -1,5 +1,5 @@
 #! /bin/env sh
-
+#test pour florian
 #Changement random pour tester la CI
 # Autre changement pour tester la CI
 NAMESPACE=europe-west1-docker.pkg.dev/bamboo-machine-407808/imt-delivcrous-registry/
