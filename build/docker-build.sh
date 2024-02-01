@@ -1,6 +1,4 @@
 #! /bin/env sh
-#test
-#test3
 NAMESPACE=europe-west1-docker.pkg.dev/bamboo-machine-407808/imt-delivcrous-registry/
 IMAGE_NAME=delivcrous-backend
 IMAGE_TAG=1.10.0
