@@ -5,7 +5,7 @@ FROM openjdk:19
 WORKDIR /app
 
 # Copie du jar généré par Maven
-COPY target/Delivcrous-0.0.1-SNAPSHOT.jar Delivcrous-0.0.1-SNAPSHOT.jar
+COPY Delivcrous-0.0.1-SNAPSHOT.jar Delivcrous-0.0.1-SNAPSHOT.jar
 
 # Commande pour exécuter l'application
 CMD ["java", "-jar", "Delivcrous-0.0.1-SNAPSHOT.jar"]
