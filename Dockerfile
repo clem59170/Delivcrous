@@ -1,5 +1,4 @@
 # Utiliser l'image OpenJDK 19
-#
 FROM openjdk:19
 
 # Répertoire de travail
