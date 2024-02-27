@@ -2,7 +2,6 @@
 FROM openjdk:19
 # Répertoire de travail
 WORKDIR /app
-#
 
 # Copie du jar généré par Maven
 COPY Delivcrous-0.0.1-SNAPSHOT.jar Delivcrous-0.0.1-SNAPSHOT.jar
