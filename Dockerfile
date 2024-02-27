@@ -1,6 +1,7 @@
 # Utiliser l'image OpenJDK 19
 FROM openjdk:19
 # Répertoire de travail
+#
 WORKDIR /app
 
 # Copie du jar généré par Maven
